@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const Logo = styled.div `
     font-size: 2rem;
-    margin-left: 33%;
+    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 20px;
@@ -20,14 +20,14 @@ const Logo = styled.div `
     `
 const Links = styled.li `
     display: inline;
-    margin-left: 40px;
+    margin: 0 auto;
     margin-right: 50px;
     
 `
 const Inputs = styled.input `
     display: flex;
     flex-direction: row;
-    margin-left: 33%;
+    margin: 0 auto;
     width: 410px;
     height: 25px;
     margin-top: 30px;
