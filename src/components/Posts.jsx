@@ -26,7 +26,7 @@ const Posts = () => {
     if(post){
         renderedPosts = post.map((post, idx) => {
             return (
-                <div key={idx}>
+                <div key={idx} className="col-4">
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={post.img_url} />
                         <Card.Body>
@@ -47,7 +47,9 @@ const Posts = () => {
     return (
         <div>
             <h1>See what's happening</h1>
-            { renderedPosts }
+            <div className="row">
+                { renderedPosts }
+            </div>
         </div>
     )
 }

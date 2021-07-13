@@ -6,7 +6,7 @@ const Welcome = () => {
 
 
     return (
-        <div>
+        <div className="container">
             <Search />
             <Posts />
             <Posts />
