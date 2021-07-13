@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import styled, { } from 'styled-components'
+import styled, {} from 'styled-components'
 import location from '../img/location.png'
 
 const SearchDiv = styled.div `

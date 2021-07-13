@@ -1,7 +1,4 @@
 import { useState, useEffect} from 'react'
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
-
 
 const Posts = () => {
     const [post, setPost] = useState([])
@@ -21,7 +18,7 @@ const Posts = () => {
     if(post){
         renderedPosts = post.map((post, idx) => {
             return (
-                <div id={idx}>
+                <div key={idx}>
                     <h2>
                         {post.title}
                     </h2>
