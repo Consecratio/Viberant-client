@@ -1,7 +1,10 @@
 const Footer = () => {
     return (
-        <div>
-            Hello From Footer!
+        <div className="text-center mt-5" style={{
+            backgroundColor: "#FF4BA6",
+            height: "100px",
+            width: "100%"
+        }}>
         </div>
     )
 }

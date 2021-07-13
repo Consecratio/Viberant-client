@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import userImage from '../img/user.png'
+import ViberantLogo from '../img/ViberantLogo.png'
 
 
 const Nav = styled.nav `
@@ -64,7 +65,7 @@ const Navbar = (props) => {
     return (
         <Nav>
             <Logo>
-                <Link to ="/"><ListElem>Logo</ListElem></Link>
+                <Link to ="/"><img src ={ViberantLogo} alt="viberant logo" width={230} height={50}></img></Link>
             </Logo>
 
             {props.currentUser ? loggedIn : loggedOut}
