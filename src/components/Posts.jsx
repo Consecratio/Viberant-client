@@ -34,7 +34,7 @@ const Posts = () => {
             return (
                 <div key={idx} className="col-4">
                     <Card style={{ width: '18rem', border: "none", borderRadius: "20px"}}>
-                        <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px"}}/>
+                        <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", maxHeight: "192px"}}/>
                         <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px"}}>
                         <Card.Title><TitleName href={`/${post._id}`}>{post.title}</TitleName></Card.Title>
                             <Card.Text>
