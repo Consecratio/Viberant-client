@@ -4,24 +4,21 @@ import jwt from 'jsonwebtoken'
 import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
 import styled from 'styled-components'
+import ViberantLogo from '../img/ViberantLogo.png'
 
 const Logo = styled.div `
     font-size: 2rem;
-    margin-left: 33%;
+    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: 20px;
-    padding-left: 75px;
-    padding-right: 50px;
-    background-color: lightgrey;
     diplay: center;
     width: 450px;
     text: center;
     `
-    const Links = styled.li `
+const Links = styled.li `
     display: inline;
-    margin-left: 40px;
-    margin-right: 50px;
+    margin: 0 auto;
+    margin-right: 10px;
     font-size: 20px;
     
 `
@@ -29,26 +26,33 @@ const Logo = styled.div `
 const Inputs = styled.input `
     display: flex;
     flex-direction: row;
-    margin-left: 33%;
+    margin: 0 auto;
     width: 450px;
-    height: 25px;
+    height: 30px;
     margin-top: 30px;
     margin-bottom: 20px;
+    border-radius: 5px;
 `
 
 const Passwords = styled.input `
-    margin-right: -9px;
-    margin-left: 20px;
+    margin: 0 auto;
+    margin-right: 5px;
+    margin-left: 5px;
     margin-bottom: 40px;
     width: 220px;
-    
+    border-radius: 5px;
 `
 const SignupB = styled.input `
     margin-top: 10px;
-    padding: 5px;
-    width: 200px;
-    background: white;
+    width: 150px;
+    height: 38px;
+    background: #ff4ba6;
     margin-bottom: 40px;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 5px;
 `
 
 const Register = (props) => {
@@ -102,7 +106,7 @@ const Register = (props) => {
     return (
         <div>
            <Logo>
-               Logo
+               <img src={ViberantLogo} alt='ViberantLogo' width={454} height={115}></img>
            </Logo>
             
             <ul>
@@ -111,7 +115,7 @@ const Register = (props) => {
                 </Links>
 
                 <Links>
-                    |
+                    <bold>|</bold>
                 </Links>
 
                 <Links>

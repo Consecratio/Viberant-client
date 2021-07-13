@@ -4,16 +4,13 @@ import jwt from 'jsonwebtoken'
 import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
 import styled from 'styled-components'
+import ViberantLogo from '../img/ViberantLogo.png'
 
 const Logo = styled.div `
     font-size: 2rem;
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: 20px;
-    padding-left: 75px;
-    padding-right: 50px;
-    background-color: lightgrey;
     diplay: center;
     width: 450px;
     text: center;
@@ -21,24 +18,31 @@ const Logo = styled.div `
 const Links = styled.li `
     display: inline;
     margin: 0 auto;
-    margin-right: 50px;
+    margin-right: 10px;
+    font-size:20px;
     
 `
 const Inputs = styled.input `
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    width: 410px;
-    height: 25px;
+    width: 450px;
+    height: 30px;
     margin-top: 30px;
     margin-bottom: 20px;
+    border-radius: 5px;
 `
 
 const LoginB = styled.input `
-    margin-top: 80px;
-    padding: 10px;
+    height: 40px;
     width: 200px;
-    background: white;
+    background: #ff4ba6;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 5px;
+    margin-bottom: 40px;
 `
 
 const ForgotP = styled.p `
@@ -102,7 +106,7 @@ const Login = (props) => {
     return (
         <div>
             <Logo>
-                Logo
+            <img src={ViberantLogo} alt='ViberantLogo' width={454} height={115}></img>
             </Logo>
 
             <ul>
@@ -111,7 +115,7 @@ const Login = (props) => {
                 </Links>
 
                 <Links>
-                    |
+                    <bold>|</bold>
                 </Links>
 
                 <Links>
@@ -126,7 +130,7 @@ const Login = (props) => {
                 <Inputs
                     id='email-input'
                     type='email'
-                    placeholder='user@domain.com'
+                    placeholder='user name or email'
                     onChange={e => setEmail(e.target.value)}
                     value={email}
                 />
@@ -153,6 +157,8 @@ const Login = (props) => {
                     type='submit'
                     value='Login'
                 />
+
+                <p>Don't have an account? <strong> Sign up</strong></p>
             </form>
 
             
