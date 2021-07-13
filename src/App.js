@@ -14,6 +14,7 @@ import Register from './components/Register'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 import Event from './components/Event'
+import Footer from './components/Footer'
 
 function App() {
   // state holds user data if the user is logged in
@@ -93,6 +94,10 @@ function App() {
 
         </Switch>
       </div>
+
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   );
 }

@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const Logo = styled.div `
     font-size: 2rem;
-    margin-left: 300px;
+    margin-left: 33%;
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 20px;
@@ -15,21 +15,23 @@ const Logo = styled.div `
     padding-right: 50px;
     background-color: lightgrey;
     diplay: center;
-    width: 200px;
+    width: 450px;
     text: center;
     `
 const Links = styled.li `
     display: inline;
-    margin: 80px;
+    margin-left: 40px;
+    margin-right: 50px;
     
 `
 const Inputs = styled.input `
     display: flex;
     flex-direction: row;
-    margin-left: 265px;
+    margin-left: 33%;
     width: 410px;
     height: 25px;
     margin-top: 30px;
+    margin-bottom: 20px;
 `
 
 const LoginB = styled.input `
@@ -37,6 +39,21 @@ const LoginB = styled.input `
     padding: 10px;
     width: 200px;
     background: white;
+`
+
+const ForgotP = styled.p `
+    margin-right: 260px;
+    padding: 10px;
+    text-decoration: underline;
+`
+
+const Radio = styled.input `
+    margin-right: 260px;
+    margin-left: -265px;
+`
+
+const RememberMe = styled.label `
+    margin-left: -250px;
 `
 
 const Login = (props) => {
@@ -94,6 +111,10 @@ const Login = (props) => {
                 </Links>
 
                 <Links>
+                    |
+                </Links>
+
+                <Links>
                     I'm a new member
                 </Links>
             </ul>
@@ -118,6 +139,15 @@ const Login = (props) => {
                     onChange={e => setPassword(e.target.value)}
                     value={password}
                 />
+
+                <Radio
+                type="checkbox" 
+                id="html"  
+                value="HTML"
+                />
+                <RememberMe htmlFor={'html'}>Remember me</RememberMe>
+                <ForgotP>forgot password?</ForgotP>
+
 
                 <LoginB
                     type='submit'
