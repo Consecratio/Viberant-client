@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className="text-center mt-5" style={{
+        <div className="text-center" style={{
             backgroundColor: "#FF4BA6",
             height: "100px",
             width: "100%"

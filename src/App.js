@@ -95,6 +95,7 @@ function App() {
         </Switch>
       </div>
 
+      <span style={{height: "125px", width: "100px", display: "block"}}></span>
       <footer>
         <Footer />
       </footer>
