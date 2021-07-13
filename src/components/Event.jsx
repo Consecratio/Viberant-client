@@ -48,7 +48,7 @@ width: 270px;
 height: 46px;
 flex-grow: 0;
 margin: 0 20px 0 0;
-background-color: #5bc0de;
+background-color: #c6f1ff;
 `
 const DateText = styled.p`
 display: flex;
@@ -59,7 +59,7 @@ const EventTime = styled.div `
   height: 46px;
   flex-grow: 0;
   margin: 0 0 0 20px;
-  background-color: #5bc0de;
+  background-color: #c6f1ff;
 }
 `
 const TimeText = styled.p`
@@ -73,14 +73,14 @@ const EventImg = styled.img `
 const EventDetail = styled.div `
 display: grid;
 width: 100%;
-grid-template-columns: 65% 25%;
+grid-template-columns: 70% 30%;
 `
 const EventCreator = styled.div `
 `
 const CreatorTitle = styled.div `
     display: flex;
     flex-direction: row;
-    padding-top: 10px;
+    padding-top: 50px;
 `
 const CreatorImg = styled.img `
     border-radius: 50%;
@@ -100,9 +100,28 @@ font-weight: 600;
 `
 const DescriptionContent = styled.p `
 text-align: left;
+padding: 0 15px 0 0;
 `
 
 const EventTagList = styled.div `
+`
+const JoinButton = styled.button `
+margin-top: 60px;
+width: 100%;
+height: 70px;
+font-size: 24px;
+font-weight: 900;
+color: #ffffff;
+letter-spacing: 1.92px;
+background-color: #ff4ba6;
+border-width: 0;
+`
+
+const Tags = styled.div `
+`
+
+//ANDIE WORK HERE
+const Participants = styled.div `
 `
 
 export default function Event () {
@@ -128,7 +147,10 @@ export default function Event () {
                     </DescriptionContent>
                 </EventCreator>
                 <EventTagList>
-                    JOIN THIS EVENT
+                    <JoinButton>JOIN THIS EVENT</JoinButton>
+
+                    <Tags></Tags>
+                    <Participants></Participants>
                 </EventTagList>
             </EventDetail>
         </EventComponent>

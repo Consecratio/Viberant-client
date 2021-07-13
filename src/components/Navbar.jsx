@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import userImage from '../img/user.png'
+import UserImage from '../img/user.png'
 import ViberantLogo from '../img/ViberantLogo.png'
 
 
@@ -15,7 +15,7 @@ const Logo = styled.div `
     margin-left: 100px;
 `
 const Actions = styled.div `
-    padding-left: 50%;
+    padding-left: 60%;
 `
 
 const ListElem = styled.a `
@@ -23,12 +23,6 @@ const ListElem = styled.a `
     color: black;
     padding: 0px 15px;
 `
-
-// const UserIcon = styled.div `
-//     display: inline;
-//     width: 10;
-//     height: 25px;
-// `
 
 const Navbar = (props) => {
     // if the user is logged in
@@ -49,9 +43,8 @@ const Navbar = (props) => {
     const loggedOut = (
         <Actions>
             {/* If the user is logged out */}
-            {/* <UserIcon>
-                <img src={userImage} alt="user"/>
-            </UserIcon> */}
+            <img src={UserImage} alt="user" style={{height: "50px", width:"50px"}}/>
+    
             <Link to="/login">
                 <ListElem>Login</ListElem>
             </Link>
