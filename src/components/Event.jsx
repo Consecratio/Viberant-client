@@ -4,9 +4,7 @@ const EventComponent = styled.div `
 margin: 0 150px;
 width: 1140px;
 `
-const EventContainer = styled.div `
 
-`
 const EventTitle = styled.div `
 width: 319px;
 height: 54px;
@@ -79,6 +77,31 @@ grid-template-columns: 65% 25%;
 `
 const EventCreator = styled.div `
 `
+const CreatorTitle = styled.div `
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+`
+const CreatorImg = styled.img `
+    border-radius: 50%;
+`
+const CreatorName = styled.div `
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 10px;
+    font-size: 54px;
+    font-weight: 600; 
+`
+const EventDescription = styled.div `
+padding-top: 30px;
+text-align: left;
+font-size: 24px;
+font-weight: 600;
+`
+const DescriptionContent = styled.p `
+text-align: left;
+`
+
 const EventTagList = styled.div `
 `
 
@@ -95,8 +118,18 @@ export default function Event () {
                 </EventHeader>
                 <EventImg src="http://placekitten.com/1140/579"></EventImg>
             <EventDetail>
-                <EventCreator>Event Creator</EventCreator>
-                <EventTagList>JOIN THIS EVENT</EventTagList>
+                <EventCreator>
+                    <CreatorTitle>
+                        <CreatorImg src="http://placekitten.com/100/100"></CreatorImg>
+                        <CreatorName>Kimberly Johnson</CreatorName>
+                    </CreatorTitle>
+                    <EventDescription>Event Description</EventDescription>
+                    <DescriptionContent>Nibh vestibulum amet cursus amet. Nulla eu urna proin lorem. Quisque suspendisse purus neque aenean aenean. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </DescriptionContent>
+                </EventCreator>
+                <EventTagList>
+                    JOIN THIS EVENT
+                </EventTagList>
             </EventDetail>
         </EventComponent>
     )
