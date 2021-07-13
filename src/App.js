@@ -87,9 +87,7 @@ function App() {
 
           <Route
             path="/event"
-            render={ props => 
-              <Event {...props} />
-            }
+            component={ Event }
           />
 
         </Switch>
