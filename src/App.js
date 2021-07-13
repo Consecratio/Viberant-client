@@ -14,7 +14,6 @@ import Register from './components/Register'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 
-
 function App() {
   // state holds user data if the user is logged in
   const [currentUser, setCurrentUser] = useState(null)
@@ -81,6 +80,14 @@ function App() {
           <Route
             path="/profile"
             render={ props => currentUser ? <Profile {...props} currentUser={ currentUser } handleLogout={ handleLogout } /> : <Redirect to='/login' /> }
+          />
+
+
+          <Route
+            path="/event"
+            render={ props => 
+              <Event {...props} />
+            }
           />
 
         </Switch>
