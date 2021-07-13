@@ -1,7 +1,9 @@
+import Posts from './Posts'
+
 const Welcome = () => {
     return (
         <div>
-            Hello from Welcome
+            <Posts />
         </div>
     )
 }
