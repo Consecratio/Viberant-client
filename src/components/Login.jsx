@@ -3,6 +3,41 @@ import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
+import styled from 'styled-components'
+
+const Logo = styled.div `
+    font-size: 2rem;
+    margin-left: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    padding-left: 75px;
+    padding-right: 50px;
+    background-color: lightgrey;
+    diplay: center;
+    width: 200px;
+    text: center;
+    `
+const Links = styled.li `
+    display: inline;
+    margin: 80px;
+    
+`
+const Inputs = styled.input `
+    display: flex;
+    flex-direction: row;
+    margin-left: 265px;
+    width: 410px;
+    height: 25px;
+    margin-top: 30px;
+`
+
+const LoginB = styled.input `
+    margin-top: 80px;
+    padding: 10px;
+    width: 200px;
+    background: white;
+`
 
 const Login = (props) => {
     // state for the controlled form
@@ -49,13 +84,25 @@ const Login = (props) => {
 
     return (
         <div>
-            <h3>Login To Your Account:</h3>
+            <Logo>
+                Logo
+            </Logo>
+
+            <ul>
+                <Links>
+                    I have an account
+                </Links>
+
+                <Links>
+                    I'm a new member
+                </Links>
+            </ul>
 
             <p>{message}</p>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor={'email-input'}>Email:</label>
-                <input
+                <label htmlFor={'email-input'}></label>
+                <Inputs
                     id='email-input'
                     type='email'
                     placeholder='user@domain.com'
@@ -63,8 +110,8 @@ const Login = (props) => {
                     value={email}
                 />
 
-                <label htmlFor={'password-input'}>Password:</label>
-                <input
+                
+                <Inputs
                     id='password-input'
                     type='password'
                     placeholder='Password'
@@ -72,11 +119,13 @@ const Login = (props) => {
                     value={password}
                 />
 
-                <input
+                <LoginB
                     type='submit'
                     value='Login'
                 />
             </form>
+
+            
         </div>
     )
 }
