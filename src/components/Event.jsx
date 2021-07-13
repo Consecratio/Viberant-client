@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import LocationImg from '../img/location.png'
 
 const EventComponent = styled.div `
 margin: 0 150px;
@@ -19,6 +20,7 @@ line-height: normal;
 letter-spacing: 0.9px;
 text-align: left;
 color: #000000;
+margin-top: 35px;
 `
 const EventHeader = styled.div `
 display: grid;
@@ -139,9 +141,10 @@ margin: 0 5px 10px 0;
 
 //ANDIE WORK HERE
 const Participants = styled.div `
+    margin-top: 20px;
     background-color: #DFF3FA;
     height: 450px;
-    width: 335px;
+    width: 456px;
 `
 
 const ParticipantsTitle = styled.div `
@@ -162,7 +165,10 @@ const Wrapper = styled.div `
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 30px;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    padding: 15px;
     ${'' /* height: 100px;
     width: 100px; */}
 `
@@ -170,19 +176,20 @@ const Wrapper = styled.div `
 const PImage = styled.div `
     background-color: black;
     border-radius: 50%;
-    height: 50px;
-    weight: 50px;
+    height: 65px;
+    weight: 65px;
+    margin-bottom: 2px;
 `
 const PName = styled.div `
     font-size: 12px;
 `
 
-export default function Event () {
+const Event = () => {
     return (
         <EventComponent className='container'>
                 <EventTitle>Event Name</EventTitle>
                 <EventHeader>
-                    <EventLocation>Address</EventLocation>
+                    <EventLocation><img src ={LocationImg} alt="location icon" style={{height: "45px", width: "45px"}}></img>Address</EventLocation>
                     <DateTime>
                         <EventDate><DateText>Date: Aug 20th, 2021</DateText></EventDate>
                         <EventTime><TimeText>Time: 2:00pm - 4:00pm</TimeText></EventTime>
@@ -260,3 +267,5 @@ export default function Event () {
         </EventComponent>
     )
 }
+
+export default Event
