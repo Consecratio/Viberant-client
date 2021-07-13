@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const EventComponent = styled.div `
 margin: 0 150px;
+padding: 0;
 width: 1140px;
 `
 
@@ -22,7 +23,7 @@ color: #000000;
 const EventHeader = styled.div `
 display: grid;
 width: 100%;
-grid-template-columns: 60% 40%;
+grid-template-columns: 50% 50%;
 padding-bottom: 10px;
 `
 const EventLocation = styled.div `
@@ -44,28 +45,30 @@ display: flex;
 `
 
 const EventDate = styled.div `
-width: 270px;
+width: 450px;
 height: 46px;
-flex-grow: 0;
 margin: 0 20px 0 0;
 background-color: #c6f1ff;
-`
-const DateText = styled.p`
 display: flex;
 justify-content: center;
+align-content: center;
+align
+padding: 0 25px;
+`
+const DateText = styled.p`
+padding-top: 10px;
 `
 const EventTime = styled.div `
-  width: 270px;
+  width: 500px;
   height: 46px;
   flex-grow: 0;
   margin: 0 0 0 20px;
+  padding: 0 25px;
   background-color: #c6f1ff;
 }
 `
 const TimeText = styled.p`
-display: flex;
-align-items: center;
-justify-content: center;
+padding-top: 10px;
 `
 
 const EventImg = styled.img `
@@ -73,7 +76,7 @@ const EventImg = styled.img `
 const EventDetail = styled.div `
 display: grid;
 width: 100%;
-grid-template-columns: 70% 30%;
+grid-template-columns: 60% 40%;
 `
 const EventCreator = styled.div `
 `
@@ -118,7 +121,21 @@ border-width: 0;
 `
 
 const Tags = styled.div `
+display: flex;
+flex-wrap: wrap;
+margin-top: 15px;
+padding-right: -5px;
 `
+
+const Tagbuttons = styled.p `
+background-color: #ffe720;
+border-radius: 50px;
+font-size: 24px;
+padding: 5px 20px;
+margin: 0 5px 10px 0;
+`
+
+
 
 //ANDIE WORK HERE
 const Participants = styled.div `
@@ -131,8 +148,8 @@ export default function Event () {
                 <EventHeader>
                     <EventLocation>Address</EventLocation>
                     <DateTime>
-                        <EventDate><DateText>Date</DateText></EventDate>
-                        <EventTime><TimeText>Time</TimeText></EventTime>
+                        <EventDate><DateText>Date: Aug 20th, 2021</DateText></EventDate>
+                        <EventTime><TimeText>Time: 2:00pm - 4:00pm</TimeText></EventTime>
                     </DateTime>
                 </EventHeader>
                 <EventImg src="http://placekitten.com/1140/579"></EventImg>
@@ -149,7 +166,21 @@ export default function Event () {
                 <EventTagList>
                     <JoinButton>JOIN THIS EVENT</JoinButton>
 
-                    <Tags></Tags>
+                    <Tags>
+                        <Tagbuttons>stasdfauff</Tagbuttons>
+                        <Tagbuttons>stuffst</Tagbuttons>
+                        <Tagbuttons>stuffstuff</Tagbuttons>
+                        <Tagbuttons>stuffa</Tagbuttons>
+                        <Tagbuttons>stuffasdfasasdf</Tagbuttons>
+                        <Tagbuttons>stuffasdfasdf</Tagbuttons>
+                        <Tagbuttons>stuff</Tagbuttons>
+                        <Tagbuttons>stuffas</Tagbuttons>
+                        <Tagbuttons>stfasdfasdf</Tagbuttons>
+                    </Tags>
+
+
+
+
                     <Participants></Participants>
                 </EventTagList>
             </EventDetail>
