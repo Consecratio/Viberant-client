@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
 import styled from 'styled-components'
 import ViberantLogo from '../img/ViberantLogo.png'
+import { Link } from 'react-router-dom'
 
 const Logo = styled.div `
     font-size: 2rem;
@@ -114,7 +115,7 @@ const Login = (props) => {
 
             <ul>
                 <Links>
-                    <a href="/login" style={{textDecoration:"none", color: "black"}}>I have an account</a>
+                    <Link to="/login" style={{textDecortion:"none", color: "black"}}>I have an account</Link>
                 </Links>
 
                 <Links>
@@ -122,7 +123,7 @@ const Login = (props) => {
                 </Links>
 
                 <Links>
-                <a href="/register" style={{textDecoration:"none", color: "black"}}>I'm a new member</a>
+                <Link to="/register" style={{textDecoration:"none", color: "black"}}>I'm a new member</Link>
                 </Links>
             </ul>
 
