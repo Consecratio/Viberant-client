@@ -5,16 +5,10 @@ import Card from 'react-bootstrap/Card'
 import styled, {} from 'styled-components'
 import HeartIcon from '../img/Frame12.png'
 import { Link } from 'react-router-dom'
+import './Posts.css'
 
 const CardHolderDiv = styled.div `
     margin: 60px 0px;
-`
-const TitleName = styled.a `
-    color: black;
-    &:hover {
-    text-decoration: none;
-    color: magenta;
-  }
 `
 const ImageDiv = styled.div `
     
@@ -46,7 +40,7 @@ const Posts = () => {
                         <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", maxHeight: "192px"}}/>
                         <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px", textAlign: "left", padding:"30px"}}>
                         <Card.Title style={{display: "flex"}}>
-                            <Link to={`/event/${post._id}`} style={{ fontWeight: "bold", display: "flex"}}>
+                            <Link to={`/event/${post._id}`} className="postLinks" style={{ fontWeight: "bold", display: "flex", color: "black"}}>
                                 {post.title}
                                 <ImageDiv>
                                     <img src={HeartIcon} alt="Heart Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%"}} />
