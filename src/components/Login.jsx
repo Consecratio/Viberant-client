@@ -115,7 +115,7 @@ const Login = (props) => {
                 </Links>
 
                 <Links>
-                    <bold>|</bold>
+                    |
                 </Links>
 
                 <Links>

@@ -18,23 +18,25 @@ const Actions = styled.div `
     padding-left: 60%;
 `
 
-const ListElem = styled.a `
-    text-decoration: none;
-    color: black;
-    padding: 0px 15px;
-`
-
 const Navbar = (props) => {
     // if the user is logged in
     const loggedIn = (
         <Actions>
             {/* If the user is logged in */}
-            <Link to="/profile">
-                <ListElem>Profile</ListElem>
+            <Link to="/profile" style={{
+                textDecoration: "none",
+                color: "black",
+                padding: "0px 15px"
+            }}>
+                Profile
             </Link>
 
-            <Link to="/">
-                <ListElem><span onClick={props.handleLogout}>Logout</span></ListElem>
+            <Link to="/" style={{
+                textDecoration: "none",
+                color: "black",
+                padding: "0px 15px"
+            }}>
+                <span onClick={props.handleLogout}>Logout</span>
             </Link>
         </Actions>
     )
@@ -45,12 +47,20 @@ const Navbar = (props) => {
             {/* If the user is logged out */}
             <img src={UserImage} alt="user" style={{height: "50px", width:"50px"}}/>
     
-            <Link to="/login">
-                <ListElem>Login</ListElem>
+            <Link to="/login" style={{
+                textDecoration: "none",
+                color: "black",
+                padding: "0px 15px"
+            }}>
+                Login
             </Link>
 
-            <Link to="/register">
-                <ListElem>Sign-up</ListElem>
+            <Link to="/register" style={{
+                textDecoration: "none",
+                color: "black",
+                padding: "0px 15px"
+            }}>
+                Sign-up
             </Link>
         </Actions>
     )
