@@ -2,8 +2,14 @@ import { useState, useEffect} from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import styled, {} from 'styled-components'
 
+const CardHolderDiv = styled.div `
+    margin: 60px 0px;
+`
+const TitleName = styled.a `
+    color: black;
+`
 
 const Posts = () => {
     const [post, setPost] = useState([])
@@ -27,15 +33,14 @@ const Posts = () => {
         renderedPosts = post.map((post, idx) => {
             return (
                 <div key={idx} className="col-4">
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={post.img_url} />
-                        <Card.Body>
-                            <Card.Title>{post.title}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{post.tags}</Card.Subtitle>
+                    <Card style={{ width: '18rem', border: "none", borderRadius: "20px"}}>
+                        <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px"}}/>
+                        <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px"}}>
+                        <Card.Title><TitleName href={`/${post._id}`}>{post.title}</TitleName></Card.Title>
                             <Card.Text>
                             {post.content}
                             </Card.Text>
-                            <Button variant="primary">See More</Button>
+                            <Card.Subtitle className="mb-2 text-muted" sytle={{color: "black"}}>{post.tags}</Card.Subtitle>
                         </Card.Body>
                     </Card>
                 </div>
@@ -45,12 +50,10 @@ const Posts = () => {
     }
 
     return (
-        <div>
-            <h1>See what's happening</h1>
-            <div className="row">
-                { renderedPosts }
-            </div>
-        </div>
+        <CardHolderDiv className="row">
+            { renderedPosts }
+        </CardHolderDiv>
+        
     )
 }
 
