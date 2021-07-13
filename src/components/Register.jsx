@@ -3,6 +3,53 @@ import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
+import styled from 'styled-components'
+
+const Logo = styled.div `
+    font-size: 2rem;
+    margin-left: 33%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    padding-left: 75px;
+    padding-right: 50px;
+    background-color: lightgrey;
+    diplay: center;
+    width: 450px;
+    text: center;
+    `
+    const Links = styled.li `
+    display: inline;
+    margin-left: 40px;
+    margin-right: 50px;
+    font-size: 20px;
+    
+`
+
+const Inputs = styled.input `
+    display: flex;
+    flex-direction: row;
+    margin-left: 33%;
+    width: 450px;
+    height: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+`
+
+const Passwords = styled.input `
+    margin-right: -9px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    width: 220px;
+    
+`
+const SignupB = styled.input `
+    margin-top: 10px;
+    padding: 5px;
+    width: 200px;
+    background: white;
+    margin-bottom: 40px;
+`
 
 const Register = (props) => {
     // state for the controlled form
@@ -54,13 +101,28 @@ const Register = (props) => {
 
     return (
         <div>
-            <h3>Registration form:</h3>
+           <Logo>
+               Logo
+           </Logo>
+            
+            <ul>
+                <Links>
+                    I have an account
+                </Links>
+
+                <Links>
+                    |
+                </Links>
+
+                <Links>
+                    I'm a new member
+                </Links>
+            </ul>
 
             <p>{message}</p>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor='name-input'>Name:</label>
-                <input
+                <Inputs
                     id='name-input'
                     type='text'
                     placeholder='Enter your name'
@@ -68,8 +130,7 @@ const Register = (props) => {
                     value={name}
                 />
 
-                <label htmlFor='email-input'>Email:</label>
-                <input
+                <Inputs
                     id='email-input'
                     type='email'
                     placeholder='Enter your email'
@@ -77,16 +138,30 @@ const Register = (props) => {
                     value={email}
                 />
 
-                <label htmlFor='password-input'>Password:</label>
-                <input
+                <Inputs
+                    id='name-input'
+                    type='number'
+                    placeholder='Phone Number'
+                />
+
+                <Passwords
                     id='password-input'
                     type='password'
                     placeholder='Desired Password'
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                 />
+                
+                <Passwords
+                    id='password-input'
+                    type='password'
+                    placeholder='Password Confirm'
+                />
+                <br />
 
-                <input type='submit' value='Register New User' />
+                <SignupB type='submit' value='Sign up' />
+
+                <p>Already have an account? <strong>Log in</strong></p>
             </form>
         </div>
     )
