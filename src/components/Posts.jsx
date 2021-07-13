@@ -1,5 +1,9 @@
 import { useState, useEffect} from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+
 
 const Posts = () => {
     const [post, setPost] = useState([])
@@ -23,21 +27,17 @@ const Posts = () => {
         renderedPosts = post.map((post, idx) => {
             return (
                 <div key={idx}>
-                    <h2>
-                        {post.title}
-                    </h2>
-
-                    <h4>
-                        {post.event_date}
-                    </h4>
-
-                    <h5>
-                        {post.tags}
-                    </h5>
-
-                    <p>
-                        {post.content}
-                    </p>
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={post.img_url} />
+                        <Card.Body>
+                            <Card.Title>{post.title}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{post.tags}</Card.Subtitle>
+                            <Card.Text>
+                            {post.content}
+                            </Card.Text>
+                            <Button variant="primary">See More</Button>
+                        </Card.Body>
+                    </Card>
                 </div>
             )
         })
@@ -46,7 +46,7 @@ const Posts = () => {
 
     return (
         <div>
-            <h1>hello</h1>
+            <h1>See what's happening</h1>
             { renderedPosts }
         </div>
     )
