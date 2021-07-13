@@ -37,6 +37,7 @@ const Buttons = styled.button `
     margin: 0 auto;
     margin-right: 40px;
     margin-left: -25px;
+    border: none;
 `
 
 const Search = () => {

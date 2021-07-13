@@ -44,7 +44,7 @@ const Posts = () => {
                     <Card style={{ width: '20rem', border: "none", borderRadius: "20px"}}>
                         <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", maxHeight: "192px"}}/>
                         <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px", textAlign: "left", padding:"30px"}}>
-                        <Card.Title style={{display: "flex"}}><TitleName href={`/${post._id}`} style={{ fontWeight: "bold", display: "flex"}}>{post.title}<ImageDiv><img src={HeartIcon} alt="Heart Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%"}}></img></ImageDiv></TitleName></Card.Title>
+                        <Card.Title style={{display: "flex"}}><TitleName href={`/event/${post._id}`} style={{ fontWeight: "bold", display: "flex"}}>{post.title}<ImageDiv><img src={HeartIcon} alt="Heart Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%"}}></img></ImageDiv></TitleName></Card.Title>
                             <Card.Text>
                             {post.content}
                             </Card.Text>

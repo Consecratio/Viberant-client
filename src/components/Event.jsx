@@ -169,8 +169,6 @@ const Wrapper = styled.div `
     height: 100px;
     width: 100px;
     padding: 15px;
-    ${'' /* height: 100px;
-    width: 100px; */}
 `
 
 const PImage = styled.div `
