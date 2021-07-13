@@ -184,7 +184,7 @@ const PName = styled.div `
 
 const Event = () => {
     return (
-        <EventComponent className='container'>
+        <EventComponent className='container' style={{ margin: "0 auto"}}>
                 <EventTitle>Event Name</EventTitle>
                 <EventHeader>
                     <EventLocation><img src ={LocationImg} alt="location icon" style={{height: "45px", width: "45px"}}></img>Address</EventLocation>
