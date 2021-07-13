@@ -1,3 +1,7 @@
+.postLinks {
+    color: black;
+}
+
 .postLinks:hover {
     text-decoration: none;
     color: magenta;
