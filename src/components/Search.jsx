@@ -16,6 +16,28 @@ const InputDiv = styled.input `
     margin: 2px;
 `
 
+const PopularTags = styled.h3 `
+    margin: 0 auto;
+    margin-right: 575px;
+    margin-top: 20px;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+`
+
+const Tags = styled.li `
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 10px;
+`
+const Buttons = styled.button `
+    background: yellow;
+    border-radius: 20px;
+    width: 100px;
+    margin: 0 auto;
+    margin-right: 40px;
+    margin-left: -25px;
+`
 
 const Search = () => {
     // const [search, setSearch] = useState(')
@@ -35,6 +57,34 @@ const Search = () => {
                     type='location'
                     placeholder='Location'
                 />
+
+                <PopularTags>Popular tags</PopularTags>
+            <ul>
+                <Tags>
+                    <Buttons>mimosas</Buttons>
+                </Tags>
+
+                <Tags>
+                    <Buttons>concerts</Buttons>
+                </Tags>
+
+                <Tags>
+                    <Buttons>animals</Buttons>
+                </Tags>
+
+                <Tags>
+                    <Buttons>sports</Buttons>
+                </Tags>
+
+                <Tags>
+                    <Buttons>hiking</Buttons>
+                </Tags>
+                
+                <Tags>
+                    <Buttons>comedy</Buttons>
+                </Tags>
+            </ul>
+
             </form>
         </SearchDiv>
     )
