@@ -4,6 +4,7 @@ import styled, {} from 'styled-components'
 
 const SearchDiv = styled.div `
     text-align: center;
+    margin: 50px auto;
 `
 
 
