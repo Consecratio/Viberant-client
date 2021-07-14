@@ -65,7 +65,7 @@ const Profile = (props) => {
             </div>
             <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px", }}><strong>Your Events</strong></h1>
-                <NewPost />
+                <NewPost {...props}/>
             </div>
         </div>
     )
