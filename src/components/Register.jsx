@@ -14,7 +14,7 @@ const Logo = styled.div `
     margin-bottom: 50px;
     diplay: center;
     width: 450px;
-    text: center;
+    text-align: center;
     `
 const Links = styled.li `
     display: inline;
@@ -33,6 +33,7 @@ const Inputs = styled.input `
     margin-top: 30px;
     margin-bottom: 20px;
     border-radius: 5px;
+    border: 2px solid black;
 `
 
 const Passwords = styled.input `
@@ -42,6 +43,7 @@ const Passwords = styled.input `
     margin-bottom: 40px;
     width: 220px;
     border-radius: 5px;
+    border: 2px solid black;
 `
 const SignupB = styled.input `
     margin-top: 10px;
@@ -62,6 +64,7 @@ const Register = (props) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [about, setAbout] = useState('')
     // state for the flash message from the server
     const [message, setMessage] = useState('')
 
@@ -74,7 +77,8 @@ const Register = (props) => {
             const requestBody = {
                 name: name,
                 email: email,
-                password: password
+                password: password,
+                about: about
             }
 
             // post registration data to the server
@@ -163,6 +167,17 @@ const Register = (props) => {
                     type='password'
                     placeholder='Password Confirm'
                 />
+
+                <Inputs
+                    style={{width: "450px", height: "200px", margin: "0 auto", border: "2px solid black", borderRadius: "10px"}}
+                    id='about-input'
+                    type='about'
+                    placeholder='Tell us about yourself!'
+                    onChange={(e) => setAbout(e.target.value)}
+                    value={about}
+                    required
+                />
+                    
                 <br />
 
                 <SignupB type='submit' value='SIGN UP' />
@@ -174,3 +189,4 @@ const Register = (props) => {
 }
 
 export default Register
+

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Login from './Login'
 import NewPost from './NewPost'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Profile = (props) => {
     // state is information from the server
@@ -24,7 +25,7 @@ const Profile = (props) => {
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`, { headers: authHeaders })
 
                 // set state with the data from the server
-                setMessage(response.data.msg)
+                setMessage(response.data.about)
 
             } catch (error) {
                 console.log(error)
@@ -38,30 +39,15 @@ const Profile = (props) => {
 
     // redirect if there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
+    
+    console.log(props.currentUser)
+    console.log(props.currentUser.about)
 
-    // check if user has an about me, if they dont they should add one
-    // if (!props.currentUser.about) {
-    //     return (
-    //         // <>
-    //         //     <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
-    //         //         <Form.Control as="textarea" placeholder="Leave a comment here" />
-    //         //     </FloatingLabel>
-    //         //     <FloatingLabel controlId="floatingTextarea2" label="Comments">
-    //         //         <Form.Control
-    //         //         as="textarea"
-    //         //         placeholder="Leave a comment here"
-    //         //         style={{ height: '100px' }}
-    //         //         />
-    //         //     </FloatingLabel>
-    //         // </>
-    //     )
-    // }
     return (
         <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px"}}><strong>{props.currentUser.name}</strong></h1>
-            <div>
-                
-                <p>This is some stuff about you!</p>
+            <div style={{padding:"5px 40px", marginLeft: "15px", marginRight: "15px"}}>
+                <p>{message}</p>
             </div>
             <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px", }}><strong>Your Events</strong></h1>
