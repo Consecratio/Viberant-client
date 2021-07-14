@@ -208,15 +208,14 @@ const Event = () => {
                     <JoinButton>JOIN THIS EVENT</JoinButton>
 
                     <Tags>
-                        <Tagbuttons>stasdfauff</Tagbuttons>
-                        <Tagbuttons>stuffst</Tagbuttons>
-                        <Tagbuttons>stuffstuff</Tagbuttons>
-                        <Tagbuttons>stuffa</Tagbuttons>
-                        <Tagbuttons>stuffasdfasasdf</Tagbuttons>
-                        <Tagbuttons>stuffasdfasdf</Tagbuttons>
-                        <Tagbuttons>stuff</Tagbuttons>
-                        <Tagbuttons>stuffas</Tagbuttons>
-                        <Tagbuttons>stfasdfasdf</Tagbuttons>
+                        <Tagbuttons>furry</Tagbuttons>
+                        <Tagbuttons>cat</Tagbuttons>
+                        <Tagbuttons>kitten</Tagbuttons>
+                        <Tagbuttons>cute</Tagbuttons>
+                        <Tagbuttons>awesome</Tagbuttons>
+                        <Tagbuttons>eyebleach</Tagbuttons>
+                        <Tagbuttons>notdog</Tagbuttons>
+                        <Tagbuttons>furball</Tagbuttons>
                     </Tags>
 
                     <Participants>
