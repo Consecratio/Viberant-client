@@ -38,15 +38,18 @@ const Profile = (props) => {
     // redirect if there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
 
+
     return (
         <div>
-            <h4>Greetings {props.currentUser.name} 👋</h4>
-            <h5>Your email is {props.currentUser.email}</h5>
+            <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px"}}><strong>{props.currentUser.name}</strong></h1>
 
             <div>
-                <p>You have a secret message from the authorized user area:</p>
+                <p>This is some stuff about you!</p>
 
-                <p>{message}</p>
+            </div>
+            <div>
+            <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px", }}><strong>Your Events</strong></h1>
+                
             </div>
         </div>
     )

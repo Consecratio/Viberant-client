@@ -16,6 +16,7 @@ import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 import Event from './components/Event'
 import Footer from './components/Footer'
+import NewPost from './components/NewPost'
 
 function App() {
   // state holds user data if the user is logged in
@@ -96,6 +97,13 @@ function App() {
               <Event {...props} />
             }
           />
+
+          {/* TODO: Remove after NewPost component is implemented in USER PROFILE */}
+          <Route
+          path='/newpost'
+          component={ NewPost}
+          />
+
 
         </Switch>
       </div>
