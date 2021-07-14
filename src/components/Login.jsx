@@ -38,15 +38,16 @@ const Inputs = styled.input `
 `
 
 const LoginB = styled.input `
-    height: 40px;
-    width: 200px;
+    height: 38px;
+    width: 150px;
     background: #ff4ba6;
     color: #ffffff;
     font-family: Poppins;
     font-size: 18px;
     font-weight: 900;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 40px;
+    border: 0;
 `
 
 const ForgotP = styled.p `
@@ -159,7 +160,7 @@ const Login = (props) => {
 
                 <LoginB
                     type='submit'
-                    value='Login'
+                    value='LOG IN'
                 />
 
                 <p>Don't have an account? <strong> Sign up</strong></p>

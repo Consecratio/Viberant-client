@@ -53,7 +53,8 @@ const SignupB = styled.input `
     font-family: Poppins;
     font-size: 18px;
     font-weight: 900;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: 0;
 `
 
 const Register = (props) => {
@@ -164,7 +165,7 @@ const Register = (props) => {
                 />
                 <br />
 
-                <SignupB type='submit' value='Sign up' />
+                <SignupB type='submit' value='SIGN UP' />
 
                 <p>Already have an account? <strong>Log in</strong></p>
             </form>
