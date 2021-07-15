@@ -35,9 +35,9 @@ const Posts = () => {
     if(post){
         renderedPosts = post.map((post, idx) => {
             return (
-                <div key={idx} className="col-3 mb-4">
+                <div key={idx} className="col-lg-3 mb-4">
                     <Card style={{ border: "none", borderRadius: "20px" }}>
-                        <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", maxHeight: "170px"}}/>
+                        <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", height: "200px", objectFit: "cover"}}/>
                         <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px", textAlign: "left", padding:"30px"}}>
                         <Card.Title style={{display: "flex"}}>
                             <Link to={`/event/${post._id}`} className="postLinks" style={{ fontWeight: "bold", display: "flex"}}>
