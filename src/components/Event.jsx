@@ -11,7 +11,6 @@ width: 1140px;
 `
 
 const EventTitle = styled.div `
-width: 319px;
 height: 54px;
 flex-grow: 0;
 margin: 0 254px 2px 7px;
@@ -48,9 +47,9 @@ display: flex;
 `
 
 const EventDate = styled.div `
-width: 450px;
+width: 220px;
 height: 46px;
-margin: 0 20px 0 0;
+margin: 0 20px 0 30px;
 background-color: #c6f1ff;
 display: flex;
 justify-content: center;
