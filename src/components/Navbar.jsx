@@ -1,27 +1,14 @@
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 import UserImage from '../img/user.png'
 import ViberantLogo from '../img/ViberantLogo.png'
-
-
-const Nav = styled.nav `
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    background-color: #0FC3FC;
-`
-const Logo = styled.div `
-    font-size: 2rem;
-    margin-left: 100px;
-`
-const Actions = styled.div `
-    padding-left: 60%;
-`
+import NavbarB from 'react-bootstrap/Navbar'
+import { Nav, Container } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Navbar = (props) => {
     // if the user is logged in
     const loggedIn = (
-        <Actions>
+        <>
             {/* If the user is logged in */}
             <Link to="/profile" style={{
                 textDecoration: "none",
@@ -38,12 +25,12 @@ const Navbar = (props) => {
             }}>
                 <span onClick={props.handleLogout}>Logout</span>
             </Link>
-        </Actions>
+        </>
     )
 
     // if the user is logged out
     const loggedOut = (
-        <Actions>
+        <>
             {/* If the user is logged out */}
             <img src={UserImage} alt="user" style={{height: "50px", width:"50px"}}/>
     
@@ -62,17 +49,41 @@ const Navbar = (props) => {
             }}>
                 Sign-up
             </Link>
-        </Actions>
+        </>
     )
 
     return (
-        <Nav>
-            <Logo>
-                <Link to ="/"><img src ={ViberantLogo} alt="viberant logo" width={230} height={50}></img></Link>
-            </Logo>
+        // <NavbarB style={{backgroundColor: "#0FC3FC"}}>
+        // <Container>
+        //     <Nav className="me-auto">
+        //         <NavbarB.Brand>               
+        //             <Link to ="/"><img src ={ViberantLogo} alt="viberant logo" width={230} height={50}></img></Link>
+        //         </NavbarB.Brand>
+        //     </Nav>
+        //     <NavbarB.Toggle aria-controls="responsive-navbar-nav" />
+        //     <NavbarB.Collapse id="responsive-navbar-nav" className="justify-content-end">
+        //         <Nav>
+        //             {props.currentUser ? loggedIn : loggedOut}
+        //         </Nav>
+        //     </NavbarB.Collapse>
+        //     </Container>
+        // </NavbarB>
 
-            {props.currentUser ? loggedIn : loggedOut}
-        </Nav>
+        <NavbarB collapseOnSelect expand="lg" variant="dark" style={{backgroundColor:"#0FC3FC"}}>
+            <Container>
+                <NavbarB.Brand><Link to ="/"><img src ={ViberantLogo} alt="viberant logo" width={230} height={50}></img></Link></NavbarB.Brand>
+                <NavbarB.Toggle aria-controls="responsive-navbar-nav" />
+                <NavbarB.Collapse id="responsive-navbar-nav" className="justify-content-end">
+                    <Nav>
+                        <Nav.Link eventKey={2}>
+                            {props.currentUser ? loggedIn : loggedOut}
+                        </Nav.Link>
+                    </Nav>
+                </NavbarB.Collapse>
+            </Container>
+        </NavbarB>
+
+
     )
 }
 
