@@ -10,7 +10,7 @@ const SearchDiv = styled.div `
 const InputDiv = styled.input `
     border: 2px solid #0FC3FC;
     background-color: #DFF3FA;
-    border-radius: 10px;
+    border-radius: 17px;
     padding: 3px 15px;
     width: 350px;
     margin: 2px;
