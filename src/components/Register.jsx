@@ -33,7 +33,8 @@ const Inputs = styled.input `
     margin-top: 30px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 1px solid lightgrey;
+    padding-left: 5px;
 `
 const TextArea = styled.textarea `
     display: flex;
@@ -44,17 +45,19 @@ const TextArea = styled.textarea `
     margin-top: 30px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 1px solid lightgrey;
+    padding-left: 5px;
 `
 
 const Passwords = styled.input `
     margin: 0 auto;
     margin-right: 5px;
     margin-left: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     width: 220px;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 1px solid lightgrey;
+    padding-left: 5px;
 `
 const SignupB = styled.input `
     margin-top: 10px;
@@ -180,7 +183,7 @@ const Register = (props) => {
                 />
 
                 <TextArea
-                    style={{width: "450px", height: "200px", margin: "0 auto", border: "2px solid black", borderRadius: "10px"}}
+                    style={{width: "450px", height: "200px", margin: "0 auto", border: "1px solid lightgrey", borderRadius: "10px"}}
                     id='about-input'
                     type='about'
                     placeholder='Tell us about yourself!'

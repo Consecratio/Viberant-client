@@ -35,6 +35,8 @@ const Inputs = styled.input `
     margin-top: 30px;
     margin-bottom: 20px;
     border-radius: 5px;
+    border: 1px solid lightgrey;
+    padding-left: 5px;
 `
 
 const LoginB = styled.input `
