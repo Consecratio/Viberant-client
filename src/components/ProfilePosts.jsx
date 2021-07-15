@@ -7,7 +7,6 @@ import PencilIcon from '../img/pencil.png'
 import TrashIcon from '../img/trash.png'
 import { Link } from 'react-router-dom'
 import './Posts.css'
-import { convertToObject } from 'typescript'
 
 const ProfilePosts = (props) => {
     const [post, setPost] = useState([])
