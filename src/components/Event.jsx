@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import LocationImg from '../img/location.png'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
 
 const EventComponent = styled.div `
 margin: 0 150px;
@@ -182,10 +185,29 @@ const PName = styled.div `
     font-size: 12px;
 `
 
-const Event = () => {
+const Event = (props) => {
+    const [event, setEvent] = useState([])
+    console.log(props.match.params.id)
+
+
+    useEffect (() => {
+        const getEvent = async () => {
+            try {
+                let eventId = props.match.params.id
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${eventId}`)
+                console.log(response.data)
+                setEvent(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getEvent()
+    }, [])
+
     return (
+
         <EventComponent className='container' style={{ margin: "0 auto"}}>
-                <EventTitle>Event Name</EventTitle>
+                <EventTitle>Event id</EventTitle>
                 <EventHeader>
                     <EventLocation><img src ={LocationImg} alt="location icon" style={{height: "45px", width: "45px"}}></img>Address</EventLocation>
                     <DateTime>

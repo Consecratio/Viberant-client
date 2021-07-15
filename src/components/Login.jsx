@@ -116,7 +116,7 @@ const Login = (props) => {
 
             <ul>
                 <Links>
-                    <Link to="/login" style={{textDecortion:"none", color: "black"}}>I have an account</Link>
+                    <Link to="/login" style={{textDecoration:"none", color: "black"}}>I have an account</Link>
                 </Links>
 
                 <Links>
@@ -135,7 +135,7 @@ const Login = (props) => {
                 <Inputs
                     id='email-input'
                     type='email'
-                    placeholder='user name or email'
+                    placeholder='Email'
                     onChange={e => setEmail(e.target.value)}
                     value={email}
                 />

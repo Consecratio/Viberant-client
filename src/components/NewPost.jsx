@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Modal, Form, Button } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
@@ -18,6 +18,8 @@ const NewPost = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+  
+
     console.log(props)
 
     const submitPost = async (e) => {
@@ -25,7 +27,7 @@ const NewPost = (props) => {
             e.preventDefault()
             const requestBody = {
                 title: title,
-                tags: tags,
+                tags: tags.split(','),
                 content: content,
                 max_attendees: maxAttendees,
                 event_date: eventDate,
@@ -34,11 +36,13 @@ const NewPost = (props) => {
             }
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/new`, requestBody)
             console.log('🦄',response)
-            
         } catch (error) {
             console.log('🆘', error)
         }
+        handleClose()
     }
+
+
 
     return (
         <div>
@@ -62,8 +66,8 @@ const NewPost = (props) => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicTags">
-                        <Form.Label>Tags</Form.Label>
-                        <Form.Control type="text" placeholder="Enter tags here" onChange={e => setTags(e.target.value)} value={tags} />
+                        <Form.Label>Tags (seperate tags by commas and no space)</Form.Label>
+                        <Form.Control type="text" placeholder="outdoors,trip,etc" onChange={e => setTags(e.target.value)} value={tags} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicContent">
@@ -88,7 +92,7 @@ const NewPost = (props) => {
 
                     <Form.Group controlId="formFile" className="mb-3">
                         <Form.Label>Event photo</Form.Label>
-                        <Form.Control type="file" onChange={e => setImgUrl(e.target.value)} value={imgUrl} />
+                        <Form.Control type="text" placeholder="Url here" onChange={e => setImgUrl(e.target.value)} value={imgUrl} />
                     </Form.Group>
                 
                 </Form>
@@ -97,7 +101,7 @@ const NewPost = (props) => {
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" type="submit" onClick={handleClose}>
+                <Button variant="primary" type="submit" onClick={submitPost}>
                         Submit
                     </Button>
                 </Modal.Footer>
