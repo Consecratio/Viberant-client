@@ -21,7 +21,9 @@ const Links = styled.li `
     margin: 0 auto;
     margin-right: 10px;
     font-size: 20px;
-    
+    &:hover {
+        border-bottom: 4px solid #0FC3FC;
+    }    
 `
 
 const Inputs = styled.input `
@@ -131,7 +133,7 @@ const Register = (props) => {
             
             <ul>
                 <Links>
-                    <Link to="/login" style={{textDecortion:"none", color: "black"}}>I have an account</Link>
+                    <Link to="/login" style={{textDecoration:"none", color: "black"}}>I have an account</Link>
                 </Links>
 
                 <Links>
@@ -139,7 +141,7 @@ const Register = (props) => {
                 </Links>
 
                 <Links>
-                    <Link to="/login" style={{textDecortion:"none", color: "black"}}>I'm a new member</Link>
+                    <Link to="/login" style={{textDecoration:"none", color: "black"}}>I'm a new member</Link>
                 </Links>
             </ul>
 

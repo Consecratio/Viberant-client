@@ -24,7 +24,6 @@ const Links = styled.li `
     &:hover {
         border-bottom: 4px solid #0FC3FC;
     }
-    
 `
 const Inputs = styled.input `
     display: flex;
@@ -126,7 +125,7 @@ const Login = (props) => {
                 </Links>
 
                 <Links>
-                <Link to="/register" style={{textDecoration:"none", color: "black"}}>I'm a new member</Link>
+                    <Link to="/register" style={{textDecoration:"none", color: "black"}}>I'm a new member</Link>
                 </Links>
             </ul>
 
