@@ -236,7 +236,7 @@ const Event = (props) => {
                         <EventTime><TimeText>Time: 2:00pm - 4:00pm</TimeText></EventTime>
                     </DateTime>
                 </EventHeader>
-                <EventImg src={event.img_url} style={{objectFit: "cover", maxHeight: '500px', maxWidth: '1140px'}} ></EventImg>
+                <EventImg src={event.img_url} style={{objectFit: "cover", width: "100%", maxHeight: "550px"}} ></EventImg>
             <EventDetail>
                 <EventCreator>
                     <CreatorTitle>
