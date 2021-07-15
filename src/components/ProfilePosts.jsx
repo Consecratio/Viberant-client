@@ -7,6 +7,7 @@ import PencilIcon from '../img/pencil.png'
 import TrashIcon from '../img/trash.png'
 import { Link } from 'react-router-dom'
 import './Posts.css'
+import { convertToObject } from 'typescript'
 
 const ProfilePosts = (props) => {
     const [post, setPost] = useState([])
@@ -15,7 +16,6 @@ const ProfilePosts = (props) => {
         const getAllPosts = async () => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts`)
-                console.log(response.data)
                 if (props.userId) {
                     setPost(response.data.filter(each => each.user_id === props.userId))
                  } else {
@@ -26,14 +26,26 @@ const ProfilePosts = (props) => {
             }
         }
         getAllPosts()
+    }, [post])
 
-    }, [])
+
+   async function handleDelete (postId) {
+       try {
+           console.log(postId)
+            const delPost = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`)
+            setPost([])
+       } catch (err) {
+           console.log(err)
+       }
+       
+    }
 
     let renderedPosts = []
     
     if(post){
         // map through the POST DB to display all posts with specific tags
         renderedPosts = post.map((post, idx) => {
+
             return (
                 <div key={idx} className="col-lg-3 mb-4">
                     <Card style={{ border: "none", borderRadius: "20px" }}>
@@ -46,9 +58,9 @@ const ProfilePosts = (props) => {
                                 <div>
                                     <img src={PencilIcon} alt="Pencil Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%", paddingLeft: "5px"}} />
                                 </div>
-                                <div>
+                                <Link onClick={() => handleDelete(post._id)} to={`/profile`}>
                                     <img src={TrashIcon} alt="Trash Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%", paddingLeft: "5px"}} />
-                                </div>
+                                </Link>
                         </Card.Title>
                             <Card.Text>
                                 {post.content}
