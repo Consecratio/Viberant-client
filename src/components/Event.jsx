@@ -217,7 +217,7 @@ const Event = (props) => {
 
         renderedAttendees = event.attendees.map((event, idx) => {
             return (
-                <Wrapper>
+                <Wrapper key={idx}>
                     <PImage></PImage>
                     <PName> {event} </PName>
                 </Wrapper>
@@ -236,7 +236,7 @@ const Event = (props) => {
                         <EventTime><TimeText>Time: 2:00pm - 4:00pm</TimeText></EventTime>
                     </DateTime>
                 </EventHeader>
-                <EventImg src={event.img_url}></EventImg>
+                <EventImg src={event.img_url} style={{objectFit: "cover"}} ></EventImg>
             <EventDetail>
                 <EventCreator>
                     <CreatorTitle>
