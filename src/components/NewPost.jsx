@@ -46,7 +46,7 @@ const NewPost = (props) => {
 
     return (
         <div>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary" onClick={handleShow} style={{backgroundColor: "#FF4BA6", border:"none"}}>
                 Create An Event
             </Button>
 

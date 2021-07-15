@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card'
+import CardGroup from 'react-bootstrap/CardGroup'
 import styled, {} from 'styled-components'
 import HeartIcon from '../img/Frame12.png'
 import { Link } from 'react-router-dom'
@@ -39,7 +40,7 @@ const Posts = () => {
                 <div key={idx} className="col-lg-3 mb-4">
                     <Card style={{ border: "none", borderRadius: "20px" }}>
                         <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", height: "200px", objectFit: "cover"}}/>
-                        <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px", textAlign: "left", padding:"30px"}}>
+                        <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", textAlign: "left", padding:"30px", minHeight: "220px"}}>
                         <Card.Title style={{display: "flex"}}>
                             <Link to={`/event/${post._id}`} className="postLinks" style={{ fontWeight: "bold", display: "flex"}}>
                                 {post.title}
@@ -51,14 +52,14 @@ const Posts = () => {
                             <Card.Text>
                                 {post.content}
                             </Card.Text>
-                            <Card.Subtitle className="mb-2" style={{color: "black", fontSize: ".75rem"}}>
+                        </Card.Body>
+                        <Card.Footer className="mb-2" style={{color: "black", fontSize: ".75rem",borderRadius: "0px 0px 20px 20px", backgroundColor: "#DFF3FA", borderTop: "none", minHeight: "70px"}}>
                                 {post.tags.map(tag => {
                                     return (
                                         <span style={{marginRight: "5px"}}>#{tag} </span>
                                     )
                                 })}
-                            </Card.Subtitle>
-                        </Card.Body>
+                            </Card.Footer>
                     </Card>
                 </div>
             )
@@ -68,9 +69,11 @@ const Posts = () => {
     }
 
     return (
-        <CardHolderDiv className="row">
-            { renderedPosts }
-        </CardHolderDiv>
+        // <CardHolderDiv className="row">
+            <CardGroup>
+                { renderedPosts }
+            </CardGroup>
+        // </CardHolderDiv>
         
     )
 }

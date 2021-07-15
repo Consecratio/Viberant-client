@@ -40,8 +40,8 @@ const Profile = (props) => {
     // redirect if there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
     
-    console.log(props.currentUser)
-    console.log(props.currentUser.about)
+    console.log(props.currentUser.posts)
+
 
     return (
         <div>
