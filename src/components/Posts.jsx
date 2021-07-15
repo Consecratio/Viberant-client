@@ -3,19 +3,11 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
-import styled, {} from 'styled-components'
 import HeartIcon from '../img/Frame12.png'
 import { Link } from 'react-router-dom'
 import './Posts.css'
 
-const CardHolderDiv = styled.div `
-    margin: 10px 0px;
-`
-const ImageDiv = styled.div `
-    
-`
-
-const Posts = () => {
+const Posts = (props) => {
     const [post, setPost] = useState([])
 
     useEffect (() => {
@@ -23,14 +15,19 @@ const Posts = () => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts`)
                 console.log(response.data)
-                setPost(response.data)
+                if (props.userId) {
+                    setPost(response.data.filter(each => each.user_id === props.userId))
+                 } else {
+                    setPost(response.data)
+                 }
             } catch (error) {
                 console.log(error)
             }
         }
         getAllPosts()
+
     }, [])
-    
+
     let renderedPosts = []
     
     if(post){
@@ -44,9 +41,9 @@ const Posts = () => {
                         <Card.Title style={{display: "flex"}}>
                             <Link to={`/event/${post._id}`} className="postLinks" style={{ fontWeight: "bold", display: "flex"}}>
                                 {post.title}
-                                <ImageDiv>
+                                <div>
                                     <img src={HeartIcon} alt="Heart Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%"}} />
-                                </ImageDiv>
+                                </div>
                             </Link>
                         </Card.Title>
                             <Card.Text>
@@ -64,17 +61,12 @@ const Posts = () => {
                 </div>
             )
         })
-        // TODO: Delete console log
-        console.log(renderedPosts)
     }
 
     return (
-        // <CardHolderDiv className="row">
             <CardGroup>
                 { renderedPosts }
-            </CardGroup>
-        // </CardHolderDiv>
-        
+            </CardGroup> 
     )
 }
 

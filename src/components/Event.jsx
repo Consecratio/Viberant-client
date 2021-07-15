@@ -140,8 +140,6 @@ padding: 5px 20px;
 margin: 0 5px 10px 0;
 `
 
-
-
 //ANDIE WORK HERE
 const Participants = styled.div `
     margin-top: 20px;
@@ -189,7 +187,6 @@ const Event = (props) => {
     const [event, setEvent] = useState([])
     console.log(props.match.params.id)
 
-
     useEffect (() => {
         const getEvent = async () => {
             try {
@@ -205,7 +202,6 @@ const Event = (props) => {
     }, [])
 
     return (
-
         <EventComponent className='container' style={{ margin: "0 auto"}}>
                 <EventTitle>Event id</EventTitle>
                 <EventHeader>

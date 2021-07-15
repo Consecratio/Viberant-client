@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const NewPost = (props) => {
     const [show, setShow] = useState(false);
-    const [user_id, setUser_id] = useState('')
+    // const [user_id, setUser_id] = useState('')
     const [title, setTitle] = useState('')
     const [tags, setTags] = useState('')
     const [content, setContent] = useState('')
@@ -18,7 +18,7 @@ const NewPost = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-  
+
 
     console.log(props)
 
@@ -26,6 +26,7 @@ const NewPost = (props) => {
         try {
             e.preventDefault()
             const requestBody = {
+                user_id: props.currentUser.id,
                 title: title,
                 tags: tags.split(','),
                 content: content,
@@ -56,9 +57,9 @@ const NewPost = (props) => {
                 </Modal.Header>
                 <Modal.Body> 
                 <Form onSubmit={submitPost}>
-                    <Form.Group className="mb-3" controlId="formBasicId">
-                        <Form.Control type="hidden" placeholder="Enter user id" />
-                    </Form.Group>
+                    {/* <Form.Group className="mb-3" controlId="formBasicId">
+                        <Form.Control type="hidden" onChange={e => setUser_id(e.target.value)} value={props.currentUser.id} />
+                    </Form.Group> */}
 
                     <Form.Group className="mb-3" controlId="formBasicTitle">
                         <Form.Label>Event Title</Form.Label>
