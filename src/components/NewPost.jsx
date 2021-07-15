@@ -12,6 +12,7 @@ const NewPost = (props) => {
     const [content, setContent] = useState('')
     const [maxAttendees, setMaxAttendees] = useState('')
     const [eventDate, setEventDate] = useState('')
+    const [eventTime,setEventTime] = useState('')
     const [address, setAddress] = useState('')
     const [imgUrl, setImgUrl] = useState('')
 
@@ -86,13 +87,18 @@ const NewPost = (props) => {
                         <Form.Control type="date" placeholder="Enter date" onChange={e => setEventDate(e.target.value)} value={eventDate} />
                     </Form.Group>
 
+                    <Form.Group className="mb-3" controlId="formBasicTime">
+                        <Form.Label>Time of the Event</Form.Label>
+                        <Form.Control type="text" placeholder="6:00pm - 8:00pm" onChange={e => setEventTime(e.target.value)} value={eventTime} />
+                    </Form.Group>
+
                     <Form.Group className="mb-3" controlId="formBasicAddress">
                         <Form.Label>Event Location</Form.Label>
                         <Form.Control type="text" placeholder="Event location" onChange={e => setAddress(e.target.value)} value={address} />
                     </Form.Group>
 
                     <Form.Group controlId="formFile" className="mb-3">
-                        <Form.Label>Event photo</Form.Label>
+                        <Form.Label>Event Photo</Form.Label>
                         <Form.Control type="text" placeholder="Url here" onChange={e => setImgUrl(e.target.value)} value={imgUrl} />
                     </Form.Group>
                 
