@@ -35,6 +35,17 @@ const Inputs = styled.input `
     border-radius: 5px;
     border: 2px solid black;
 `
+const TextArea = styled.textarea `
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 450px;
+    height: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+`
 
 const Passwords = styled.input `
     margin: 0 auto;
@@ -168,7 +179,7 @@ const Register = (props) => {
                     placeholder='Password Confirm'
                 />
 
-                <Inputs
+                <TextArea
                     style={{width: "450px", height: "200px", margin: "0 auto", border: "2px solid black", borderRadius: "10px"}}
                     id='about-input'
                     type='about'
