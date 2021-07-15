@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import './Posts.css'
 
 const CardHolderDiv = styled.div `
-    margin: 60px 0px;
+    margin: 10px 0px;
 `
 const ImageDiv = styled.div `
     

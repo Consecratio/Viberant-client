@@ -3,13 +3,12 @@ import Search from './Search'
 import styled, {} from 'styled-components'
 
 const HappeningHeader = styled.h1 `
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
 `
 
 const WhenHeader = styled.h3 `
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     text-align: left;
 `
 
@@ -19,7 +18,7 @@ const Welcome = () => {
     return (
         <div className="container">
             <Search />
-            <HappeningHeader>See what's happening</HappeningHeader>
+            <HappeningHeader className="text-left">See what's happening</HappeningHeader>
             <WhenHeader>Today</WhenHeader>
             <Posts />
             <WhenHeader>This week</WhenHeader>
