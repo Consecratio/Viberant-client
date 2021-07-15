@@ -4,7 +4,7 @@ import axios from 'axios'
 import Login from './Login'
 import NewPost from './NewPost'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Posts from "./Posts"
+import ProfilePosts from "./ProfilePosts"
 
 const Profile = (props) => {
     // state is information from the server
@@ -54,7 +54,7 @@ const Profile = (props) => {
                 <NewPost {...props}/>
             </div>
             <div className="mt-5">
-                <Posts userId={props.currentUser.id} />
+                <ProfilePosts userId={props.currentUser.id} />
             </div>
         </div>
     )
