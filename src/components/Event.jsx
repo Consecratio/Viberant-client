@@ -132,7 +132,7 @@ margin-top: 15px;
 padding-right: -5px;
 `
 
-const Tagbuttons = styled.p `
+const Tagbuttons = styled.div `
 background-color: #ffe720;
 border-radius: 50px;
 font-size: 24px;
@@ -192,7 +192,7 @@ const Event = (props) => {
             try {
                 let eventId = props.match.params.id
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${eventId}`)
-                console.log(response.data)
+                console.log('🦄', response.data)
                 setEvent(response.data)
             } catch (error) {
                 console.log(error)
@@ -201,17 +201,42 @@ const Event = (props) => {
         getEvent()
     }, [])
 
+    let renderedTags = []
+    let renderedAttendees = []
+
+    if(event._id){
+        console.log('💎', event)
+        renderedTags = event.tags.map((event, idx) => {
+            return(
+                <Tagbuttons key={idx}>
+                    {event}
+                </Tagbuttons>
+            )
+        })
+        console.log(renderedTags,'🌺')
+
+        renderedAttendees = event.attendees.map((event, idx) => {
+            return (
+                <Wrapper>
+                    <PImage></PImage>
+                    <PName> {event} </PName>
+                </Wrapper>
+            )
+        })
+        console.log(renderedAttendees,'🌈')
+    }
+
     return (
         <EventComponent className='container' style={{ margin: "0 auto"}}>
-                <EventTitle>Event id</EventTitle>
+                <EventTitle>{event.title}</EventTitle>
                 <EventHeader>
                     <EventLocation><img src ={LocationImg} alt="location icon" style={{height: "45px", width: "45px"}}></img>Address</EventLocation>
                     <DateTime>
-                        <EventDate><DateText>Date: Aug 20th, 2021</DateText></EventDate>
+                        <EventDate><DateText>{event.event_date}</DateText></EventDate>
                         <EventTime><TimeText>Time: 2:00pm - 4:00pm</TimeText></EventTime>
                     </DateTime>
                 </EventHeader>
-                <EventImg src="http://placekitten.com/1140/579"></EventImg>
+                <EventImg src={event.img_url}></EventImg>
             <EventDetail>
                 <EventCreator>
                     <CreatorTitle>
@@ -219,62 +244,21 @@ const Event = (props) => {
                         <CreatorName>Kimberly Johnson</CreatorName>
                     </CreatorTitle>
                     <EventDescription>Event Description</EventDescription>
-                    <DescriptionContent>Nibh vestibulum amet cursus amet. Nulla eu urna proin lorem. Quisque suspendisse purus neque aenean aenean. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <DescriptionContent>{event.content}
                     </DescriptionContent>
                 </EventCreator>
                 <EventTagList>
                     <JoinButton>JOIN THIS EVENT</JoinButton>
 
                     <Tags>
-                        <Tagbuttons>furry</Tagbuttons>
-                        <Tagbuttons>cat</Tagbuttons>
-                        <Tagbuttons>kitten</Tagbuttons>
-                        <Tagbuttons>cute</Tagbuttons>
-                        <Tagbuttons>awesome</Tagbuttons>
-                        <Tagbuttons>eyebleach</Tagbuttons>
-                        <Tagbuttons>notdog</Tagbuttons>
-                        <Tagbuttons>furball</Tagbuttons>
+                        {renderedTags} 
                     </Tags>
+                    
 
                     <Participants>
-                        <ParticipantsTitle>participants 9/12 </ParticipantsTitle>
+                        <ParticipantsTitle>Participants</ParticipantsTitle>
                         <PersonContainer>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
-                            <Wrapper>
-                                <PImage></PImage>
-                                <PName>Person</PName>
-                            </Wrapper>
+                            {renderedAttendees}
                         </PersonContainer>
                     </Participants>
                 </EventTagList>
