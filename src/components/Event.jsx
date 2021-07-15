@@ -32,9 +32,7 @@ grid-template-columns: 50% 50%;
 padding-bottom: 10px;
 `
 const EventLocation = styled.div `
-width: 179px;
 height: 36px;
-flex-grow: 0;
 margin: 4px 0 4px 5px;
 font-size: 24px;
 font-weight: 600;
@@ -226,17 +224,19 @@ const Event = (props) => {
         console.log(renderedAttendees,'🌈')
     }
 
+    console.log('🥥',event.address)
+
     return (
         <EventComponent className='container' style={{ margin: "0 auto"}}>
                 <EventTitle>{event.title}</EventTitle>
                 <EventHeader>
-                    <EventLocation><img src ={LocationImg} alt="location icon" style={{height: "45px", width: "45px"}}></img>Address</EventLocation>
+                    <EventLocation><img src ={LocationImg} alt="location icon" style={{height: "45px", width: "45px"}}></img>{event.address}</EventLocation>
                     <DateTime>
                         <EventDate><DateText>{event.event_date}</DateText></EventDate>
                         <EventTime><TimeText>Time: 2:00pm - 4:00pm</TimeText></EventTime>
                     </DateTime>
                 </EventHeader>
-                <EventImg src={event.img_url} style={{objectFit: "cover"}} ></EventImg>
+                <EventImg src={event.img_url} style={{objectFit: "cover", maxHeight: '500px', maxWidth: '1140px'}} ></EventImg>
             <EventDetail>
                 <EventCreator>
                     <CreatorTitle>
