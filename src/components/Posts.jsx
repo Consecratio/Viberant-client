@@ -35,7 +35,7 @@ const Posts = () => {
     if(post){
         renderedPosts = post.map((post, idx) => {
             return (
-                <div key={idx} className="col-4">
+                <div key={idx} className="col-4 mb-4">
                     <Card style={{ width: '20rem', border: "none", borderRadius: "20px"}}>
                         <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", maxHeight: "192px"}}/>
                         <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", borderRadius: "0px 0px 20px 20px", textAlign: "left", padding:"30px"}}>
