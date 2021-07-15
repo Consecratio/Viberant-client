@@ -16,7 +16,7 @@ const ImageDiv = styled.div `
 
 const Posts = () => {
     const [post, setPost] = useState([])
-// map through the POST DB to display all posts with specific tags
+
     useEffect (() => {
         const getAllPosts = async () => {
             try {
@@ -29,10 +29,11 @@ const Posts = () => {
         }
         getAllPosts()
     }, [])
-
+    
     let renderedPosts = []
     
     if(post){
+        // map through the POST DB to display all posts with specific tags
         renderedPosts = post.map((post, idx) => {
             return (
                 <div key={idx} className="col-lg-3 mb-4">
@@ -50,7 +51,13 @@ const Posts = () => {
                             <Card.Text>
                                 {post.content}
                             </Card.Text>
-                            <Card.Subtitle className="mb-2 text-muted" sytle={{color: "black"}}>{post.tags}</Card.Subtitle>
+                            <Card.Subtitle className="mb-2" style={{color: "black", fontSize: ".75rem"}}>
+                                {post.tags.map(tag => {
+                                    return (
+                                        <span style={{marginRight: "5px"}}>#{tag} </span>
+                                    )
+                                })}
+                            </Card.Subtitle>
                         </Card.Body>
                     </Card>
                 </div>
