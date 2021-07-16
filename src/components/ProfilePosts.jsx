@@ -7,6 +7,7 @@ import PencilIcon from '../img/pencil.png'
 import TrashIcon from '../img/trash.png'
 import { Link } from 'react-router-dom'
 import './Posts.css'
+import styled from 'styled-components'
 
 const ProfilePosts = (props) => {
     const [post, setPost] = useState([])
@@ -48,6 +49,11 @@ const ProfilePosts = (props) => {
     }
 
     let renderedPosts = []
+
+    // const Pencil = styled.img `
+    // &:hover {
+    //     background: url('../img/pencilhover.png')
+    // }`
     
     if(post){
         // map through the POST DB to display all posts with specific tags
@@ -59,15 +65,21 @@ const ProfilePosts = (props) => {
                         <Card.Img variant="top" src={post.img_url} style={{borderRadius: "20px 20px 0px 0px", height: "200px", objectFit: "cover"}}/>
                         <Card.Body style={{backgroundColor: "#C6F1FF", border: "none", textAlign: "left", padding:"30px", minHeight: "220px"}}>
                         <Card.Title style={{display: "flex"}}>
-                            <Link to={`/event/${post._id}`} className="postLinks" style={{ fontWeight: "bold", display: "flex"}}>
-                                {post.title}
-                            </Link>
-                                <div>
-                                    <img src={PencilIcon} alt="Pencil Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%", paddingLeft: "5px"}} />
-                                </div>
-                                <Link onClick={() => handleDelete(post._id)} to={`/profile`}>
-                                    <img src={TrashIcon} alt="Trash Icon" style={{height: "20px", width: "20px", justifyContent: "flex-end", marginLeft: "90%", paddingLeft: "5px"}} />
+                            <div style={{marginRight: "15px"}}>
+                                <Link to={`/event/${post._id}`} className="postLinks" style={{ fontWeight: "bold", display: "flex"}}>
+                                    {post.title}
                                 </Link>
+                            </div>
+                            <div style={{marginRight: "5px"}}>
+                                <a href="#">
+                                    <img src={PencilIcon} alt="Pencil Icon" style={{height: "20px", width: "20px", display: "flex" }} />
+                                </a>
+                            </div>
+                            <div style={{alignItems: "end"}}>
+                                <Link onClick={() => handleDelete(post._id)} to={`/profile`}>
+                                    <img src={TrashIcon} alt="Trash Icon" style={{height: "20px", width: "20px", display: "flex" }} />
+                                </Link>
+                            </div>
                         </Card.Title>
                             <Card.Text>
                                 {post.content}
