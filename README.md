@@ -1,6 +1,6 @@
 Name of your app
     Viberant
-    <img src='/img/ViberantHome.png' target='blank' width='300' alt='homepage'/>
+        ! [home page](/img/ViberantHome.png)
 
 Tech stack you plan to use
     Mongo, Mongoose, React, Express, Node, Bootstrap, Styled-Components, Javascript, HTML, CSS
@@ -42,7 +42,7 @@ https://docs.google.com/presentation/d/1o-N73p7TFKX3lWOm04fZ8dd7LCB_8UJpXgio2jp2
     Younger people, espcially those aged 16-24, who couldn't attend school or college for the past year (COVID), are particularly in need of new friends and says to socialize.  This is a one stop web app where they can find activities, create new activites, and be able to go out and socialize after being stuck inside for a year!
 
 Simple wireframes
-    <img src='/img/Wireframes.png' target='blank' width='300' alt='wireframes' />
+    ! [wireframes](/img/Wireframes.png)
 
     https://www.figma.com/files/recent?fuid=996457699262928382
     https://miro.com/app/board/o9J_l7R4OxI=/
