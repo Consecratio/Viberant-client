@@ -141,7 +141,7 @@ const Register = (props) => {
                 </Links>
 
                 <Links>
-                    <Link to="/login" style={{textDecoration:"none", color: "black"}}>I'm a new member</Link>
+                    <Link to="/register" style={{textDecoration:"none", color: "black"}}>I'm a new member</Link>
                 </Links>
             </ul>
 
