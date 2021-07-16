@@ -53,11 +53,11 @@ const NewPost = (props) => {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
+            <Form onSubmit={submitPost}>
                 <Modal.Header closeButton>
                 <Modal.Title>Create A New Post</Modal.Title>
                 </Modal.Header>
                 <Modal.Body> 
-                <Form onSubmit={submitPost}>
                     {/* <Form.Group className="mb-3" controlId="formBasicId">
                         <Form.Control type="hidden" onChange={e => setUser_id(e.target.value)} value={props.currentUser.id} />
                     </Form.Group> */}
@@ -102,7 +102,7 @@ const NewPost = (props) => {
                         <Form.Control type="text" placeholder="Url here" onChange={e => setImgUrl(e.target.value)} value={imgUrl} />
                     </Form.Group>
                 
-                </Form>
+                
                 </Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
@@ -112,6 +112,7 @@ const NewPost = (props) => {
                         Submit
                     </Button>
                 </Modal.Footer>
+                </Form>
             </Modal>
         </div>
     )
