@@ -265,7 +265,7 @@ const Event = (props) => {
             <EventDetail>
                 <EventCreator>
                     <CreatorTitle>
-                        <CreatorImg src="http://placekitten.com/100/100"></CreatorImg>
+                        <CreatorImg src="https://vignette.wikia.nocookie.net/whatwedointheshadows/images/b/b2/Laszlo.jpg/revision/latest?cb=20190621184931" style={{height:"100px", width: "100px"}}></CreatorImg>
                         <CreatorName>{userName}</CreatorName>
                     </CreatorTitle>
                     <EventDescription>Event Description</EventDescription>
