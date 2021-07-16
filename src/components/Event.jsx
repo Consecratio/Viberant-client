@@ -227,6 +227,27 @@ const Event = (props) => {
         userName = event.user_id.name
     }
 
+    const joinEvent = async () => {
+        try {
+            // get the jwt from local storage
+            const token = localStorage.getItem('jwtToken')
+
+            // make up the auth headers
+            const authHeaders = {
+                Authorization: token
+            }
+
+            // hit the auth locked endpoint
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/join/${event._id}`, {} , { headers: authHeaders })
+
+            // set response
+            console.log(response.data)
+
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
     console.log('🥥',event.address)
     console.log(event)
 
@@ -252,8 +273,7 @@ const Event = (props) => {
                     </DescriptionContent>
                 </EventCreator>
                 <EventTagList>
-                    <JoinButton>JOIN THIS EVENT</JoinButton>
-
+                    <JoinButton onClick={joinEvent}>JOIN THIS EVENT</JoinButton>
                     <Tags>
                         {renderedTags} 
                     </Tags>
