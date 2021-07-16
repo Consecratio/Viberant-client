@@ -94,7 +94,7 @@ const CreatorName = styled.div `
     display: flex;
     align-items: center;
     padding: 0 0 0 10px;
-    font-size: 54px;
+    font-size: 40px;
     font-weight: 600; 
 `
 const EventDescription = styled.div `
@@ -200,6 +200,7 @@ const Event = (props) => {
 
     let renderedTags = []
     let renderedAttendees = []
+    let userName = ""
 
     if(event._id){
         console.log('💎', event)
@@ -220,10 +221,14 @@ const Event = (props) => {
                 </Wrapper>
             )
         })
+
         console.log(renderedAttendees,'🌈')
+
+        userName = event.user_id.name
     }
 
     console.log('🥥',event.address)
+    console.log(event)
 
     return (
         <EventComponent className='container' style={{ margin: "0 auto"}}>
@@ -240,7 +245,7 @@ const Event = (props) => {
                 <EventCreator>
                     <CreatorTitle>
                         <CreatorImg src="http://placekitten.com/100/100"></CreatorImg>
-                        <CreatorName>Kimberly Johnson</CreatorName>
+                        <CreatorName>{userName}</CreatorName>
                     </CreatorTitle>
                     <EventDescription>Event Description</EventDescription>
                     <DescriptionContent>{event.content}
