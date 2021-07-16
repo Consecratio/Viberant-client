@@ -30,8 +30,16 @@ const ProfilePosts = (props) => {
 
    async function handleDelete (postId) {
        try {
+           // get the jwt from local storage
+           const token = localStorage.getItem('jwtToken')
+
+           // make up the auth headers
+           const authHeaders = {
+               Authorization: token
+           }
+
            console.log(postId)
-            const delPost = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`)
+            const delPost = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/${postId}`, { headers: authHeaders })
             setPost([])
        } catch (err) {
            console.log(err)

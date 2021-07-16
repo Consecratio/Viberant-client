@@ -33,6 +33,7 @@ const NewPost = (props) => {
                 content: content,
                 max_attendees: maxAttendees,
                 event_date: eventDate,
+                event_time: eventTime,
                 address: address,
                 img_url: imgUrl
             }
