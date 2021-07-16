@@ -26,6 +26,15 @@ const NewPost = (props) => {
     const submitPost = async (e) => {
         try {
             e.preventDefault()
+
+            // get the jwt from local storage
+            const token = localStorage.getItem('jwtToken')
+
+            // make up the auth headers
+            const authHeaders = {
+                Authorization: token
+            }
+            
             const requestBody = {
                 user_id: props.currentUser.id,
                 title: title,
@@ -37,7 +46,7 @@ const NewPost = (props) => {
                 address: address,
                 img_url: imgUrl
             }
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/new`, requestBody)
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts/new`, requestBody, { headers: authHeaders })
             console.log('🦄',response)
         } catch (error) {
             console.log('🆘', error)
