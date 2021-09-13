@@ -56,10 +56,8 @@ Viberant utilizes a MongoDB and Mongoose to manage it's data, a React front-end 
 
 ## Simple wireframes
 ![wireframes](./src/img/Wireframes.png)
-
-    https://www.figma.com/files/recent?fuid=996457699262928382
-    https://miro.com/app/board/o9J_l7R4OxI=/
-    https://admiring-spence-c2dab0.netlify.app/
+- [Figma Board](https://www.figma.com/files/recent?fuid=996457699262928382)
+- [Miro Board](https://miro.com/app/board/o9J_l7R4OxI=/)
 
 ---
 
