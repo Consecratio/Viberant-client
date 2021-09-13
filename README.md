@@ -41,9 +41,9 @@ Viberant utilizes a MongoDB and Mongoose to manage it's data, a React front-end 
 - dotenv will hold the secret components like backend URL
     
 ### To see the backend components:
-- https://github.com/Consecratio/mern-auth-server [^1]
+- https://github.com/Consecratio/mern-auth-server
 
-[^1]: If you download both front and back end components you will still not be able to get the site to work because there are hidden tokens and passwords that one would need to create on their own.
+* If you download both front and back end components you will still not be able to get the site to work because there are hidden tokens and passwords that one would need to create on their own.
 
 ---
 
