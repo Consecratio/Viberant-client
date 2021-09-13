@@ -1,6 +1,6 @@
 # Viberant - Client
 
-[Viberant Home Page](/img/ViberantHome.png)
+[Viberant Home Page](https://admiring-spence-c2dab0.netlify.app/)
 
 ## Tech Stack
 - MongoDB
@@ -48,14 +48,14 @@ Viberant utilizes a MongoDB and Mongoose to manage it's data, a React front-end 
 ---
 
 ## User Stories
-https://docs.google.com/presentation/d/1o-N73p7TFKX3lWOm04fZ8dd7LCB_8UJpXgio2jp2VfY/edit#slide=id.ge2e350c427_2_34
+[Google Doc](https://docs.google.com/presentation/d/1o-N73p7TFKX3lWOm04fZ8dd7LCB_8UJpXgio2jp2VfY/edit#slide=id.ge2e350c427_2_34)
 
     Younger people, espcially those aged 16-24, who couldn't attend school or college for the past year (COVID), are particularly in need of new friends and says to socialize.  This is a one stop web app where they can find activities, create new activites, and be able to go out and socialize after being stuck inside for a year!
 
 ---
 
 ## Simple wireframes
-    ![wireframes](./src/img/Wireframes.png)
+![wireframes](./src/img/Wireframes.png)
 
     https://www.figma.com/files/recent?fuid=996457699262928382
     https://miro.com/app/board/o9J_l7R4OxI=/
